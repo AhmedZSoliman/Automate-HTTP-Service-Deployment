@@ -1,4 +1,4 @@
-# Automate-HTTP-Service-Deployment
+# Automate-HTTP-Service-Deployment on EC2 instance 
 ```bash
 
 vim build.sh
