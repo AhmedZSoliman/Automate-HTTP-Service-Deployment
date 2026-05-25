@@ -1,6 +1,7 @@
 # Automate-HTTP-Service-Deployment
 vim build.sh
 
+```bash
 #!/bin/bash
 apt update
 echo "install dotnet"
@@ -54,3 +55,6 @@ systemctl daemon-reload
 
 #run it
 systemctl start srv-02
+
+```
+
