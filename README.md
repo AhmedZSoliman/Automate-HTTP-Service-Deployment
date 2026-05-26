@@ -6,38 +6,32 @@ vim build.sh
 
 ```bash
 
-
-
-
 #!/bin/bash
 wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
-apt update
-echo "install dotnet"
-apt install -y aspnetcore-runtime-6.0
-apt install -y dotnet-sdk-6.0
+
+sudo apt update
+
+echo "Enable universe repo (important)"
+sudo apt install -y software-properties-common
+sudo add-apt-repository universe -y
+
+sudo apt update
+
+echo "Install dotnet"
+sudo apt install -y aspnetcore-runtime-6.0
+sudo apt install -y dotnet-sdk-6.0
 
 #install git
 echo "install git"
 apt install git
-apt install unzip
-
-#install aws cli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip -qq awscliv2.zip
-./aws/install
-aws --version
-
-#configure git
-sudo -u ubuntu git config --global credential.helper '!aws codecommit credential-helper $@'
-sudo -u ubuntu git config --global credential.UseHttpPath true
-
-
-#clone repo from code commit
+ 
+#clone repo from github 
 cd /home/ubuntu
 echo "git clone"
-sudo -u ubuntu git clone https://git-codecommit.eu-north-1.amazonaws.com/v1/repos/srv-02
+git clone  https://github.com/AhmedZSoliman/Automate-HTTP-Service-Deployment-on-EC2-Instance.git
+mv Automate-HTTP-Service-Deployment-on-EC2-Instance  srv-02
 cd srv-02
 
 #build the dot net service
