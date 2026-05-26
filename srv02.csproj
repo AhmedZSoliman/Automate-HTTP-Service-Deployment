@@ -2,8 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp6</TargetFramework>
-		<StartupObject>Program</StartupObject>
+    <TargetFramework>net8.0</TargetFramework>
+
+    <!-- Needed because we use class Program -->
+    <StartupObject>Program</StartupObject>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
