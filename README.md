@@ -13,8 +13,7 @@ rm packages-microsoft-prod.deb
 
 sudo apt update
 
-echo "Enable universe repo (important)"
-sudo apt install -y software-properties-common
+ sudo apt install -y software-properties-common
 sudo add-apt-repository universe -y
 
 sudo apt update
